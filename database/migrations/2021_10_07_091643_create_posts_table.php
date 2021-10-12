@@ -24,7 +24,7 @@ class CreatePostsTable extends Migration
             $table->string('excerpt', 500)->nullable(false);
             $table->text('content')->nullable(false);
             $table->string('seo_title')->nullable();
-            $table->string('seo_keywords')->nullable();
+            $table->string('seo_keyword')->nullable();
             $table->timestamps();
         });
     }

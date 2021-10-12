@@ -58,7 +58,6 @@ class PostRequest extends FormRequest
             ],
             'seo_title' => [
                 'max:500',
-                
             ],
             'seo_keyword' => [
                 'max:500',
