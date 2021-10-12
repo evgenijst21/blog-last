@@ -1,0 +1,11 @@
+@extends('admin.layouts_admin.layout', ['title' => 'Редактирование категории'])
+
+@section('content')
+    <h1>Редактирование категории</h1>
+    <form method="post" enctype="multipart/form-data"
+          action="{{ route('admin.category.update', ['category' => $category->id]) }}">
+        @csrf
+        @method('PUT')
+        @include('admin.category.part.form')
+    </form>
+@endsection
