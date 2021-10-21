@@ -1,7 +1,14 @@
 @extends('admin.layouts_admin.layout', ['title' => 'Все посты блога'])
 
 @section('content')
+
 <h1>Все посты блога</h1>
+<form class="d-md-inline-block form-inline mb-md-4" method="GET" action="{{ route('admin.search') }}" >
+    <div class="input-group">
+        <input id="search" name="search" class="form-control" type="text" placeholder="Поиск по категориям" aria-label="Поиск по категориям"/>
+        <button class="btn btn-primary" id="btnNavbarSearch" type="submit"><i class="fas fa-search"></i></button>
+    </div>
+</form>
     @if ($category->count())
         <ul>
         @foreach ($category as $root)

@@ -9,8 +9,9 @@
     
     <table class="table table-bordered">
         <tr>
-            <th width="45%">Наименование</th>
-            <th width="45%">ЧПУ (англ.)</th>
+            <th width="30%">Наименование</th>
+            <th width="30%">ЧПУ (англ.)</th>
+            <th width="30%">title</th>
             <th><i class="fas fa-edit"></i></th>
             <th><i class="fas fa-trash-alt"></i></th>
         </tr>

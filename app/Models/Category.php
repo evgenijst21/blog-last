@@ -9,14 +9,14 @@ class Category extends Model
 {
     use HasFactory;
     
+    
     public $timestamps = false;
     protected $fillable = [
-        'parent_id',
+        'category_id',
         'name',
         'slug',
+        'title',
         'content',
-        'seo_title',
-        'seo_keyword',
         'image',
     ];
 

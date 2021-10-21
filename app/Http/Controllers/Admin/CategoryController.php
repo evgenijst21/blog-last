@@ -36,12 +36,7 @@ class CategoryController extends Controller
         return view('admin.category.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+    
     public function store(CategoryRequest $request)
     {
         $category = new Category();
@@ -53,35 +48,16 @@ class CategoryController extends Controller
             ->with('success', 'Новая категория успешно создана');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Category  $category
-     * @return \Illuminate\Http\Response
-     */
     public function show(Category $category)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Category  $category
-     * @return \Illuminate\Http\Response
-     */
     public function edit(Category $category)
     {
         return view('admin.category.edit', compact('category'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Category  $category
-     * @return \Illuminate\Http\Response
-     */
     public function update(CategoryRequest $request, Category $category)
     {
         $category->update($request->all());
@@ -90,22 +66,16 @@ class CategoryController extends Controller
             ->with('success', 'Категория была успешно исправлена');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Category  $category
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(Category $category)
     {
         if ($category->children->count()) {
-            $errors[] = 'Нельзя удалить категорию с дочерними категориями';
+            $errors = 'Нельзя удалить категорию у которой есть дочерние категориями';
         }
         if ($category->posts->count()) {
-            $errors[] = 'Нельзя удалить категорию, которая содержит посты';
+            $errors = 'Нельзя удалить категорию, которая содержит посты';
         }
         if (!empty($errors)) {
-            return back()->withErrors($errors);
+            return back()->with('success', $errors);
         }
         $category->delete();
         return redirect()

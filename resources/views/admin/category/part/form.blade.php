@@ -1,13 +1,20 @@
 <div class="form-group mb-3">
     <label for="exampleInputEmail1" class="form-label">Наименование</label>
     <input id="name_post" type="text" class="form-control" name="name" placeholder="..."
-           required maxlength="100" value="{{ old('name') ?? $category->name ?? '' }}">
+            value="{{ old('name') ?? $category->name ?? '' }}">
 </div>
 <div class="form-group mb-3">
     <label for="exampleInputEmail1" class="form-label">ЧПУ (на англ.)</label>
     <input id="slug" type="text" class="form-control" name="slug" placeholder="..."
-           required maxlength="100" value="{{ old('slug') ?? $category->slug ?? '' }}">
+            value="{{ old('slug') ?? $category->slug ?? '' }}">
 </div>
+
+<div class="form-group mb-3">
+    <label for="exampleInputEmail1" class="form-label">Title SEO</label>
+    <input id="title" type="text" class="form-control" name="title" placeholder="..."
+            value="{{ old('title') ?? $category->title ?? '' }}">
+</div>
+
 <div class="form-group mb-3">
     <label for="exampleInputEmail1" class="form-label">Категория</label>
     @php
@@ -20,7 +27,7 @@
 </div>
 <div class="form-group mb-3">
     <label for="exampleInputEmail1" class="form-label">Краткое описание</label>
-    <textarea class="form-control" name="content" placeholder="..." maxlength="500"
+    <textarea class="form-control" name="content" id="editor_cat" placeholder="..." maxlength="500"
               rows="5">{{ old('content') ?? $category->content ?? '' }}</textarea>
 </div>
 <div class="form-group mb-3">

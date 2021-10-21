@@ -7,6 +7,7 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ImageController;
+use App\Http\Controllers\Admin\SearchController;
 
 Route::get('/', [IndexController::class, 'index'])->name('index');
 
@@ -70,5 +71,8 @@ Route::group([
     Route::resource('category', 'CategoryController', ['except' => 'show']);
     // CRUD операции для тегов
     Route::resource('tag', 'TagController', ['except' => 'show']);
+    // поиск категорий
+    Route::get('search', 'PostController@search')
+        ->name('search');
     
 });

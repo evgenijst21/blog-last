@@ -54,7 +54,7 @@ class PostRequest extends FormRequest
             ],
             'content' => [
                 'required',
-                'min:100',
+                'min:10',
             ],
             'seo_title' => [
                 'max:500',

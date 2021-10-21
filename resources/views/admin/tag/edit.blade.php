@@ -2,6 +2,15 @@
 
 @section('content')
     <h1>Редактирование тега</h1>
+    @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
     <form method="post" action="{{ route('admin.tag.update', ['tag' => $tag->id]) }}">
         @csrf
         @method('PUT')

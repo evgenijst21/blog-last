@@ -13,6 +13,7 @@
                 @endif
             </td>
             <td>{{ $item->slug }}</td>
+            <td>{{ $item->title }}</td>
             <td>
                 
                     <a href="{{ route('admin.category.edit', ['category' => $item->id]) }}">

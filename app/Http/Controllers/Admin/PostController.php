@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Post;
 use App\Models\Category;
+use App\Models\Post;
 use App\Http\Requests\PostRequest;
 use Illuminate\Http\Request;
 use App\Helpers\ImageSaver;
@@ -24,15 +24,26 @@ class PostController extends Controller
     public function index()
     {
         $category = Category::where('category_id', 0)->get();
-        $posts = Post::orderBy('created_at', 'desc')->paginate(5);
+        $posts = Post::orderBy('created_at', 'desc')->paginate(20);
         return view('admin.post.index', compact('category', 'posts'));
     }
 
     public function category(Category $category) {
-        $posts = $category->posts()->paginate(5);
+        $posts = $category->posts()->paginate(20);
         return view('admin.post.category', compact('category', 'posts'));
     }
 
+    public function search(Request $request) 
+    {
+        $category = Category::where('name', 'LIKE', "%{$request->search}%")->get();
+        $posts = Post::whereHas('category', $filter = function($query) use ($request) {
+            $query->where('name', 'LIKE', "%{$request->search}%"); 
+        })
+        ->with(['category' => $filter])->paginate(20);
+        
+
+        return view('admin.post.index', compact('category', 'posts'));
+    }
 
     /**
      * Show the form for creating a new resource.

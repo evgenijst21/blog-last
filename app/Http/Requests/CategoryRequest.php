@@ -32,13 +32,16 @@ class CategoryRequest extends FormRequest
             'name' => [
                 'required',
                 'min:3',
-                'max:100',
+                'max:255',
             ],
             'slug' => [
                 'required',
-                'max:100',
+                'max:255',
                 $unique,
                 'regex:~^[-_a-z0-9]+$~i',
+            ],
+            'title' => [
+                'max:255'
             ],
             'content' => [
                 'max:500',
@@ -68,6 +71,7 @@ class CategoryRequest extends FormRequest
         return [
             'name' => 'Наименование',
             'slug' => 'ЧПУ (англ.)',
+            'title' => 'title',
             'content' => 'Краткое описание',
             'image' => 'Изображение',
         ];

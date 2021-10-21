@@ -38,5 +38,11 @@ window.onload = function() {
   });
 }
 
-let editor = CKEDITOR.replace( 'editor' );
-CKFinder.setupCKEditor(editor);
+let editor_text = CKEDITOR.replace( 'editor_text' );
+CKFinder.setupCKEditor(editor_text);
+
+let editor_desc = CKEDITOR.replace( 'editor_desc' );
+CKFinder.setupCKEditor(editor_desc); 
+
+let editor_cat = CKEDITOR.replace( 'editor_cat' );
+CKFinder.setupCKEditor(editor_cat);

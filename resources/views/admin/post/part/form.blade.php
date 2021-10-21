@@ -31,12 +31,12 @@
 </div>
 <div class="form-group mb-3">
     <label for="exampleInputEmail1" class="form-label">Анонс поста</label>
-    <textarea class="form-control" name="excerpt" placeholder="..."
+    <textarea class="form-control" name="excerpt" id="editor_desc" placeholder="..."
               required maxlength="500">{{ old('excerpt') ?? $post->excerpt ?? '' }}</textarea>
 </div>
 <div class="form-group mb-3">
     <label for="exampleInputEmail1" class="form-label">Текст поста</label>
-    <textarea class="form-control" name="content" id="editor" placeholder="..."
+    <textarea class="form-control" name="content" id="editor_text" placeholder="..."
               required rows="4">{{ old('content') ?? $post->content ?? '' }}</textarea>
 </div>
 
