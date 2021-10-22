@@ -7,7 +7,6 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ImageController;
-use App\Http\Controllers\Admin\SearchController;
 
 Route::get('/', [IndexController::class, 'index'])->name('index');
 

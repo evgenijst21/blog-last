@@ -23,7 +23,7 @@ class CategoryRequest extends FormRequest
      * @return array
      */
     public function rules() {
-        $unique = 'unique:categories,slug';
+        
         if ('admin.category.update' == $this->route()->getName()) {
             $model = $this->route('category');
             $unique = 'unique:categories,slug,'.$model->id.',id';
@@ -33,12 +33,6 @@ class CategoryRequest extends FormRequest
                 'required',
                 'min:3',
                 'max:255',
-            ],
-            'slug' => [
-                'required',
-                'max:255',
-                $unique,
-                'regex:~^[-_a-z0-9]+$~i',
             ],
             'title' => [
                 'max:255'

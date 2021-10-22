@@ -3,16 +3,17 @@
     <input id="name_post" type="text" class="form-control" name="name" placeholder="..."
             value="{{ old('name') ?? $category->name ?? '' }}">
 </div>
+
 <div class="form-group mb-3">
-    <label for="exampleInputEmail1" class="form-label">ЧПУ (на англ.)</label>
-    <input id="slug" type="text" class="form-control" name="slug" placeholder="..."
-            value="{{ old('slug') ?? $category->slug ?? '' }}">
+    <label for="exampleInputEmail1" class="form-label">Title (SEO)</label>
+    <input id="seo_title" type="text" class="form-control" name="seo_title" placeholder="..."
+            value="{{ old('seo_title') ?? $category->seo_title ?? '' }}">
 </div>
 
 <div class="form-group mb-3">
-    <label for="exampleInputEmail1" class="form-label">Title SEO</label>
-    <input id="title" type="text" class="form-control" name="title" placeholder="..."
-            value="{{ old('title') ?? $category->title ?? '' }}">
+    <label for="exampleInputEmail1" class="form-label">keyword (SEO)</label>
+    <input id="seo_keyword" type="text" class="form-control" name="seo_keyword" placeholder="..."
+            value="{{ old('seo_keyword') ?? $category->seo_keyword ?? '' }}">
 </div>
 
 <div class="form-group mb-3">
@@ -27,8 +28,8 @@
 </div>
 <div class="form-group mb-3">
     <label for="exampleInputEmail1" class="form-label">Краткое описание</label>
-    <textarea class="form-control" name="content" id="editor_cat" placeholder="..." maxlength="500"
-              rows="5">{{ old('content') ?? $category->content ?? '' }}</textarea>
+    <textarea class="form-control" name="desc" id="editor_cat" placeholder="..." maxlength="500"
+              rows="5">{{ old('desc') ?? $category->desc ?? '' }}</textarea>
 </div>
 <div class="form-group mb-3">
     <input type="file" class="form-control-file" name="image" accept="image/png, image/jpeg">

@@ -36,13 +36,7 @@ class PostRequest extends FormRequest
                 'min:3',
                 'max:100',
             ],
-            'slug' => [
-                'required',
-                'string',
-                'max:100',
-                $unique,
-                'regex:~^[-_a-z0-9]+$~i',
-            ],
+            
             'category_id' => [
                 'required',
                 'numeric',

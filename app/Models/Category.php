@@ -15,8 +15,9 @@ class Category extends Model
         'category_id',
         'name',
         'slug',
-        'title',
-        'content',
+        'seo_title',
+        'seo_keyword',
+        'desc',
         'image',
     ];
 

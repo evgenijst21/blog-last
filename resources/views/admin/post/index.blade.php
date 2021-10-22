@@ -28,7 +28,7 @@
             <tr>
                 <th width="10%">Дата</th>
                 <th width="25%">Наименование</th>
-                <th width="25%">ЧПУ</th>
+                <th width="25%">description</th>
                 <th width="10%">Title</th>
                 <th width="10%">Ключевые слова</th>
                 
@@ -41,10 +41,10 @@
                 <tr>
                     <td>{{ $post->created_at }}</td>
                     <td>{{ $post->name }}</td>
-                    <td>{{ $post->slug }}</td>
+                    <td>{{ iconv_strlen($post->excerpt) }}</td>
                     
-                    <td>{{ $post->seo_title }}</td>
-                    <td>{{ $post->seo_keyword }}</td>
+                    <td>{{ iconv_strlen($post->seo_title) }}</td>
+                    <td>{{ iconv_strlen($post->seo_keyword) }}</td>
                     <td>
                         
                             <a href="{{ route('admin.post.show', ['post' => $post->id]) }}"

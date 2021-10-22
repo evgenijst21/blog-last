@@ -17,7 +17,7 @@
             
                 {!! $post->content !!}
             
-                <p>{{ $post->excerpt }}</p>
+                <p>{!! $post->excerpt !!}</p>
             
         </div>
         <div class="card-footer d-flex justify-content-between">

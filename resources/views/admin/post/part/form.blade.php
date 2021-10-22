@@ -5,17 +5,17 @@
            required maxlength="100" value="{{ old('name') ?? $post->name ?? '' }}">
 </div>
 <div class="form-group mb-3">
-    <label for="exampleInputEmail1" class="form-label">ЧПУ (на англ.)</label>
-    <input id="slug" type="text" class="form-control" name="slug" placeholder="..."
-           required maxlength="100" value="{{ old('slug') ?? $post->slug ?? '' }}">
-</div>
-<div class="form-group mb-3">
-    <label for="exampleInputEmail1" class="form-label">Title</label>
+    <label for="exampleInputEmail1" class="form-label">Title (SEO)</label>
     <input type="text" class="form-control" name="seo_title" placeholder="..."
            required maxlength="100" value="{{ old('seo_title') ?? $post->seo_title ?? '' }}">
 </div>
 <div class="form-group mb-3">
-    <label for="exampleInputEmail1" class="form-label">Ключевые слова</label>
+    <label for="exampleInputEmail1" class="form-label">Description (SEO)</label>
+    <input type="text" class="form-control" name="seo_title" placeholder="..."
+           required maxlength="100" value="{{ old('seo_desc') ?? $post->seo_desc ?? '' }}">
+</div>
+<div class="form-group mb-3">
+    <label for="exampleInputEmail1" class="form-label">Ключевые слова (SEO)</label>
     <input type="text" class="form-control" name="seo_keyword" placeholder="Ключевые слова"
            required maxlength="100" value="{{ old('seo_keyword') ?? $seo_keyword ?? '' }}">
 </div>

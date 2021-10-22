@@ -12,8 +12,9 @@
                     <strong>{{ $item->name }}</strong>
                 @endif
             </td>
-            <td>{{ $item->slug }}</td>
-            <td>{{ $item->title }}</td>
+            <td>{{ iconv_strlen($item->desc) }}</td>
+            <td>{{ iconv_strlen($item->seo_keyword) }}</td>
+            <td>{{ iconv_strlen($item->seo_title) }}</td>
             <td>
                 
                     <a href="{{ route('admin.category.edit', ['category' => $item->id]) }}">

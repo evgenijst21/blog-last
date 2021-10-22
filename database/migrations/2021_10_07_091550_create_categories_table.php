@@ -20,7 +20,7 @@ class CreateCategoriesTable extends Migration
             $table->string('slug', 250)->unique();
             $table->string('title', 250)->nullable();
             $table->string('image', 50)->nullable();
-            $table->string('content', 500)->nullable();
+            $table->string('desc', 500)->nullable();
             $table->timestamps();
         });
     }

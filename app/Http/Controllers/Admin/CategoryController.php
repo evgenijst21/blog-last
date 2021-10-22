@@ -7,6 +7,7 @@ use App\Models\Category;
 use App\Helpers\ImageSaver;
 use Illuminate\Http\Request;
 use App\Http\Requests\CategoryRequest;
+use Cocur\Slugify\Slugify;
 
 class CategoryController extends Controller
 {
@@ -39,9 +40,14 @@ class CategoryController extends Controller
     
     public function store(CategoryRequest $request)
     {
+        $slugifi = new Slugify();
         $category = new Category();
         $category->fill($request->except('image'));
         $category->image = $this->imageSaver->upload($category);
+        $category->slug = $slugifi->slugify($request->name);
+        $category->seo_title = $request->seo_title;
+        $category->seo_keyword = $request->seo_keyword;
+        $category->desc = $request->desc;
         $category->save();
         return redirect()
             ->route('admin.category.index')

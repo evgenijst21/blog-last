@@ -16,6 +16,7 @@ class Post extends Model
         'name',
         'slug',
         'excerpt',
+        'seo_desc',
         'seo_title',
         'seo_keyword',
         'content',

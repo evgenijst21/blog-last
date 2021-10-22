@@ -8,6 +8,7 @@ use App\Models\Post;
 use App\Http\Requests\PostRequest;
 use Illuminate\Http\Request;
 use App\Helpers\ImageSaver;
+use Cocur\Slugify\Slugify;
 
 class PostController extends Controller
 {
@@ -63,11 +64,12 @@ class PostController extends Controller
      */
     public function store(PostRequest $request)
     {
+        $slugifi = new Slugify();
         $post = new Post;
         $post->fill($request->except('image'));
         $post->image = $this->imageSaver->upload($post);
         $post->name = $request->name;
-        $post->slug = $request->slug;
+        $post->slug = $slugifi->slugify($request->name);
         $post->category_id = $request->category_id;
         $post->excerpt = $request->excerpt;
         $post->content = $request->content;
