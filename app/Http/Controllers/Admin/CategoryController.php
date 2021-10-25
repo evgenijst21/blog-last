@@ -43,7 +43,7 @@ class CategoryController extends Controller
         $slugifi = new Slugify();
         $category = new Category();
         $category->fill($request->except('image'));
-        $category->image = $this->imageSaver->upload($category);
+        $category->image = $this->imageSaver->upload($category, 370, 250);
         $category->slug = $slugifi->slugify($request->name);
         $category->seo_title = $request->seo_title;
         $category->seo_keyword = $request->seo_keyword;

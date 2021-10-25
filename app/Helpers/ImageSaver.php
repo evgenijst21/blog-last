@@ -9,7 +9,7 @@ use Intervention\Image\Facades\Image;
 
 class ImageSaver {
     
-    public function upload($item = null) {
+    public function upload($item = null, $width, $height) {
         $dir = 'post';
         if ($item instanceof Category) {
             $dir = 'category';
@@ -30,7 +30,7 @@ class ImageSaver {
             $name = basename($src); 
             
             $dst = str_replace('source', 'image', $src);
-            $this->resize($src, $dst, 1000, 300);
+            $this->resize($src, $dst, $width, $height);
         }
         return $name;
     }

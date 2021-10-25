@@ -10,8 +10,8 @@
         <meta name="csrf-token" content="{{ csrf_token() }}" />
         <title>{{ $title ?? env('APP_NAME') }}</title>
 
-        <link href="{{ asset("assets/css/styles.css") }}" rel="stylesheet" />
-        <link href="{{ asset("assets/css/all.css") }}" rel="stylesheet" />
+        <link href="{{ asset("assets/bootstrap/css/styles.css") }}" rel="stylesheet" />
+        <link href="{{ asset("assets/bootstrap/css/all.css") }}" rel="stylesheet" />
         
 
         

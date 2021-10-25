@@ -67,7 +67,7 @@ class PostController extends Controller
         $slugifi = new Slugify();
         $post = new Post;
         $post->fill($request->except('image'));
-        $post->image = $this->imageSaver->upload($post);
+        $post->image = $this->imageSaver->upload($post, 1000, 300);
         $post->name = $request->name;
         $post->slug = $slugifi->slugify($request->name);
         $post->category_id = $request->category_id;
