@@ -18,7 +18,8 @@ class CreateCategoriesTable extends Migration
             $table->unsignedBigInteger('category_id')->nullable(false)->default(0);
             $table->string('name', 250);
             $table->string('slug', 250)->unique();
-            $table->string('title', 250)->nullable();
+            $table->string('seo_title', 250)->nullable();
+            $table->string('seo_keyword', 250)->nullable();
             $table->string('image', 50)->nullable();
             $table->string('desc', 500)->nullable();
             $table->timestamps();

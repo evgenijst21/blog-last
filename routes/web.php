@@ -7,6 +7,7 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ImageController;
+use App\Http\Controllers\Admin\FeedbackController;
 
 Route::get('/', [IndexController::class, 'index'])->name('index');
 
@@ -49,6 +50,9 @@ Route::group([
         ->name('post');
 });
 
+Route::post('feedback', [FeedbackController::class, 'store'])
+        ->name('feedback.store');
+
 Route::group([
     'as' => 'admin.', 
     'prefix' => 'admin', 
@@ -70,6 +74,11 @@ Route::group([
     Route::resource('category', 'CategoryController', ['except' => 'show']);
     // CRUD операции для тегов
     Route::resource('tag', 'TagController', ['except' => 'show']);
+    // маршрут для формы обратной связи
+    Route::get('feedback/index', [FeedbackController::class, 'index'])
+        ->name('feedback.index');
+    Route::delete('feedback/{feedback}', [FeedbackController::class, 'destroy'])
+        ->name('feedback.destroy');
     // поиск категорий
     Route::get('search', 'PostController@search')
         ->name('search');

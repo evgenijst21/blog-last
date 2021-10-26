@@ -70,6 +70,11 @@
                             Теги
                             <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                         </a>
+                        <a class="nav-link collapsed" href="{{ route('admin.feedback.index') }}" aria-expanded="false" >
+                            <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                            Обратная связь
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
 
 
                     <!--
