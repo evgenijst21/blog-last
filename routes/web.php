@@ -15,12 +15,12 @@ Route::group([
     'as' => 'auth.', 
     'prefix' => 'auth', 
 ], function () {
-    // форма регистрации
-    Route::get('register', [RegisterController::class, 'register'])
-        ->name('register');
-    // создание пользователя
-    Route::post('register', [RegisterController::class, 'create'])
-        ->name('create');
+    // // форма регистрации
+    // Route::get('register', [RegisterController::class, 'register'])
+    //     ->name('register');
+    // // создание пользователя
+    // Route::post('register', [RegisterController::class, 'create'])
+    //     ->name('create');
     // форма входа
     Route::get('login', [LoginController::class, 'login'])
         ->name('login');
@@ -77,10 +77,14 @@ Route::group([
     // маршрут для формы обратной связи
     Route::get('feedback/index', [FeedbackController::class, 'index'])
         ->name('feedback.index');
+    Route::get('feedback/{id}', [FeedbackController::class, 'show'])
+        ->name('feedback.single');
     Route::delete('feedback/{feedback}', [FeedbackController::class, 'destroy'])
         ->name('feedback.destroy');
     // поиск категорий
     Route::get('search', 'PostController@search')
         ->name('search');
+    // CRUD операции над пользователями
+    Route::resource('user', 'UserController');
     
 });

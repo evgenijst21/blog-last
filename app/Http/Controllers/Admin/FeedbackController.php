@@ -32,4 +32,10 @@ class FeedbackController extends Controller
             ->route('admin.feedback.index')
             ->with('success', 'Сообщение было успешно удалено');
     }
+
+    public function show($id) {
+        $feedback = Feedback::find($id);
+
+        return view('admin.feedback.single', compact('feedback'));
+    }
 }

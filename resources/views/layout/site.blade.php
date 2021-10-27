@@ -7,8 +7,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Rubik:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{asset("assets/css/font-awesome/css/font-awesome.min.css")}}">
+    <link href="{{asset("assets/css/font-awesome/css/font-awesome.min.css")}}" rel="stylesheet">
     <link href="{{ asset("assets/css/app.css") }}" rel="stylesheet" />
+    <link href="{{ asset("assets/css/google-translate.css")}}" rel="stylesheet">
     <title>Document</title>
 </head>
 <body>
@@ -27,6 +28,11 @@
 					Услуги отличного сервиса в Москве
 				</h1>
 			</div>
+            <div class="language">
+                <img src="{{asset("assets/img/lang/lang__ru.png")}}" alt="ru" data-google-lang="ru" class="language__img">
+                <img src="{{asset("assets/img/lang/lang__en.png")}}" alt="en" data-google-lang="en" class="language__img">
+                <img src="{{asset("assets/img/lang/lang__zh.png")}}" alt="zh" data-google-lang="zh-CN" class="language__img">
+            </div>
             <div class="search">
                 <form class="search-form" action="">
                     <input type="search" name="q" placeholder="Стиралка INDESIT"> 
@@ -70,6 +76,10 @@
         </div>
     </footer>
     <script src="{{asset("assets/js/main.js")}}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+    <script src="{{asset("assets/js/google-translate.js")}}"></script>
+    
+
 </body>
 </html>
     

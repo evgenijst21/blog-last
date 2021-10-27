@@ -69,48 +69,6 @@
             </div>
         </div>
           
-        <div class="cardContainer inactive">
-            <div class="card">
-              <div class="side front">
-                <div class="img">
-                    <img src="http://placehold.it/370x250"/>
-                </div>
-                <div class="info">
-                  <h3>Крупная бытовая техника</h3>
-                  <br>
-                    <a href="#">Cтиральная машина,</a>
-                    <a href="#">Холодильник,</a>
-                    <a href="#">Плита,</a>
-                    <a href="#">Посудомоечная машина,</a>
-                    <a href="#">Водонагреватель,</a>
-                    <a href="#">Пылесос,</a>
-                    <a href="#">Кондиционер,</a>
-                    <a href="#">Духовка</a>    
-                </div>
-              </div>
-            </div>
-        </div>
-          
-        <div class="cardContainer inactive">
-            <div class="card">
-              <div class="side front">
-                <div class="img">
-                    <img src="http://placehold.it/370x250"/>
-                </div>
-                <div class="info">
-                  <h3>Мелкая бытовая техника</h3>
-                  <br>
-                    <a href="#">Кофемашина,</a>
-                    <a href="#">Мультиварка,</a>
-                    <a href="#">Блендер,</a>
-                    <a href="#">Утюг,</a>
-                    <a href="#">Чайник,</a>
-                    <a href="#">Швейная машинка</a>
-                
-                </div>
-              </div>
-            </div>
-        </div>
         <div class="all_tehnic">
             <a href="#" class="tehnic">Все виды техники <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
         </div>

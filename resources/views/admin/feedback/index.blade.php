@@ -16,7 +16,7 @@
     @foreach ($feedbacks as $feedback)
         <tr>
             <td>{{ $feedback->created_at }}</td>
-            <td>{{ $feedback->name }}</td>
+            <td><a href="{{ route('admin.feedback.single', ['id' => $feedback->id]) }}">{{ $feedback->name }}</a></td>
             <td>{{ $feedback->email }}</td>
             <td>{{ $feedback->text }}</td>
             <td>{{ $feedback->ip }}</td>

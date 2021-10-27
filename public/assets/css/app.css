@@ -313,6 +313,7 @@ ul, li {
 .input {
   height: 35px;
   border: 1px solid #9e9d9d;
+  font-size: 16px;
 }
 
 .text-feedback {
@@ -357,6 +358,13 @@ ul, li {
   padding: 10px;
   margin: 10px;
   background-color: #f38787;
+}
+
+/* Форма входа */
+
+.form-group {
+  margin: 15px 0px;
+  font-size: 18px;
 }
 
   
