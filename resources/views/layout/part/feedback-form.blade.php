@@ -17,7 +17,7 @@
         {{-- <div class="info_feed" id="info"></div> --}}
         <form action="{{ route('feedback.store') }}" method="POST" class="feedback" id="feedback">
             @csrf
-            <h2>Форма обратной связи.</h2>
+            <h2>Оставьте заявку</h2>
             <p> Ваше имя* <input class="input" id="name" name="name" type="text" /> </p>
 
             <p> Электронная почта* <input class="input" id="email" name="email" type="email" /> </p>

@@ -17,7 +17,7 @@
 <div class="form-group mb-3">
     <label for="exampleInputEmail1" class="form-label">Ключевые слова (SEO)</label>
     <input type="text" class="form-control" name="seo_keyword" placeholder="Ключевые слова"
-           required maxlength="100" value="{{ old('seo_keyword') ?? $seo_keyword ?? '' }}">
+           required maxlength="100" value="{{ old('seo_keyword') ?? $post->seo_keyword ?? '' }}">
 </div>
 <div class="form-group mb-3">
     <label for="exampleInputEmail1" class="form-label">Категория</label>

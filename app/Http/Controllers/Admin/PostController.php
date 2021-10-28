@@ -24,6 +24,7 @@ class PostController extends Controller
      */
     public function index()
     {
+        $this->authorize('view-protected');
         $category = Category::where('category_id', 0)->get();
         $posts = Post::orderBy('created_at', 'desc')->paginate(20);
         return view('admin.post.index', compact('category', 'posts'));

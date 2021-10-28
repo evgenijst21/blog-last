@@ -5,8 +5,6 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\IndexController;
-use App\Http\Controllers\PostController;
-use App\Http\Controllers\ImageController;
 use App\Http\Controllers\Admin\FeedbackController;
 
 Route::get('/', [IndexController::class, 'index'])->name('index');
@@ -77,6 +75,8 @@ Route::group([
     // маршрут для формы обратной связи
     Route::get('feedback/index', [FeedbackController::class, 'index'])
         ->name('feedback.index');
+    Route::get('feedback/filter', [FeedbackController::class, 'filter'])
+        ->name('feedback.filter');
     Route::get('feedback/{id}', [FeedbackController::class, 'show'])
         ->name('feedback.single');
     Route::delete('feedback/{feedback}', [FeedbackController::class, 'destroy'])

@@ -30,8 +30,8 @@ class LoginController extends Controller
 
         if (Auth::attempt($credentials)) {
             return redirect()
-                ->route('admin.post.index')
-                ->with('success', 'Вы вошли в личный кабинет');
+                ->route('admin.feedback.index')
+                ->with('success', 'Вы вошли');
         }
 
         return redirect()

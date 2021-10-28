@@ -16,6 +16,7 @@ class TagController extends Controller
      */
     public function index()
     {
+        $this->authorize('view-protected');
         $items = Tag::paginate(8);
         return view('admin.tag.index', compact('items'));
     }

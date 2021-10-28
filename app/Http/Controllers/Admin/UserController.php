@@ -17,6 +17,7 @@ class UserController extends Controller
      */
     public function index()
     {
+        $this->authorize('view-protected');
         $users = User::with('roles')->paginate(20);
         
         return view('admin.user.index', compact('users'));
@@ -48,13 +49,16 @@ class UserController extends Controller
             'password' => 'required|string|min:6|confirmed',
         ]);
 
+        // $users = User::find(1);
+        // dd($users->roles[0]->id);
+
         $user = new User();
         $user->name = $request->name;
         $user->sur_name = $request->sur_name;
         $user->login = $request->login;
         $user->password = Hash::make($request->password);
-        
         $user->save();
+        $user->roles()->attach($request->role_id);
         
 
         return redirect()

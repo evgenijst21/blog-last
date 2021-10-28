@@ -59,6 +59,7 @@
                             </a>
                             <div class="sb-sidenav-menu-heading">Интерфейс</div>
 
+                            @can('view-protected')
                             <a class="nav-link collapsed" href="{{ route('admin.post.index') }}" aria-expanded="false">
                                 <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
                                 Блог
@@ -74,15 +75,16 @@
                                 Теги
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
-                            <a class="nav-link collapsed" href="{{ route('admin.feedback.index') }}"
-                                aria-expanded="false">
-                                <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
-                                Обратная связь
-                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                            </a>
                             <a class="nav-link collapsed" href="{{ route('admin.user.index') }}" aria-expanded="false">
                                 <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
                                 Пользователи
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            @endcan
+                            <a class="nav-link collapsed" href="{{ route('admin.feedback.index') }}"
+                                aria-expanded="false">
+                                <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                                Заявки
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
 

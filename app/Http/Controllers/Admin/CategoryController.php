@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\CategoryRequest;
 use Cocur\Slugify\Slugify;
 
+
 class CategoryController extends Controller
 {
     private $imageSaver;
@@ -23,6 +24,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
+        $this->authorize('view-protected');
         $items = Category::all();
         return view('admin.category.index', compact('items'));
     }
