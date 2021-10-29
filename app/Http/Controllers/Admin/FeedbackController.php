@@ -41,7 +41,7 @@ class FeedbackController extends Controller
         $feedback->text = $request->text;
         $feedback->ip = $_SERVER['REMOTE_ADDR'];
         $feedback->save();
-        return back()->with('success', 'Сообщение успешно отправленно');
+        return back()->with('success', 'Заявка успешно отправленна');
     }
 
     public function destroy(Feedback $feedback) 
@@ -49,7 +49,7 @@ class FeedbackController extends Controller
         $feedback->delete();
         return redirect()
             ->route('admin.feedback.index')
-            ->with('success', 'Сообщение было успешно удалено');
+            ->with('success', 'Заявка была успешно удалена');
     }
 
     public function show($id) 

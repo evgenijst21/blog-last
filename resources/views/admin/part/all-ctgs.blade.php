@@ -17,7 +17,7 @@
             <td>{{ iconv_strlen($item->seo_title) }}</td>
             <td>
                 
-                    <a href="{{ route('admin.category.edit', ['category' => $item->id]) }}">
+                    <a href="{{ route('admin.category.edit', ['category' => $item->id]) }}" class="co-blue">
                         <i class="far fa-edit"></i>
                     </a>
                 
@@ -28,8 +28,8 @@
                           method="post" onsubmit="return confirm('Удалить эту категорию?')">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="m-0 p-0 border-0 bg-transparent">
-                            <i class="far fa-trash-alt text-danger"></i>
+                        <button type="submit" class="sub-delete">
+                            <i class="far fa-trash-alt"></i>
                         </button>
                     </form>
                 

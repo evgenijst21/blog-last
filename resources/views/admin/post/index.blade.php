@@ -1,8 +1,10 @@
 @extends('admin.layouts_admin.layout', ['title' => 'Все посты блога'])
 
 @section('content')
+<div class="heading-h">
+    <h1 class="heading">Все посты блога</h1>
+</div>
 
-<h1>Все посты блога</h1>
 <form class="d-md-inline-block form-inline mb-md-4" method="GET" action="{{ route('admin.search') }}" >
     <div class="input-group">
         <input id="search" name="search" class="form-control" type="text" placeholder="Поиск по категориям" aria-label="Поиск по категориям"/>
@@ -20,34 +22,35 @@
         @endforeach
         </ul>
     @endif
-    <a href="{{ route('admin.post.create') }}" class="btn btn-success mb-4">
-        Создать пост
-    </a>
+    
     @if ($posts->count())
-        <table class="table table-bordered">
+    <div class="main-table">
+        <table class="table">
+            <thead>
             <tr>
-                <th width="10%">Дата</th>
-                <th width="25%">Наименование</th>
-                <th width="25%">description</th>
-                <th width="10%">Title</th>
-                <th width="10%">Ключевые слова</th>
+                <th>Дата</th>
+                <th>Наименование</th>
+                <th>description</th>
+                <th>Title</th>
+                <th>Ключевые слова</th>
                 
-                <th><i class="fas fa-eye"></i></th>
-                <th><i class="fas fa-toggle-on"></i></th>
-                <th><i class="fas fa-edit"></i></th>
-                <th><i class="fas fa-trash-alt"></i></th>
+                <th>Предварительный просмотр</th>
+                <th>Публикация on/off</th>
+                <th>Изменить</th>
+                <th>Удалить</th>
             </tr>
+            </thead>
             @foreach ($posts as $post)
                 <tr>
                     <td>{{ $post->created_at }}</td>
-                    <td>{{ $post->name }}</td>
+                    <td>{{ mb_substr($post->name, 0, 30) }}</td>
                     <td>{{ iconv_strlen($post->excerpt) }}</td>
                     
                     <td>{{ iconv_strlen($post->seo_title) }}</td>
                     <td>{{ iconv_strlen($post->seo_keyword) }}</td>
                     <td>
                         
-                            <a href="{{ route('admin.post.show', ['post' => $post->id]) }}"
+                            <a href="{{ route('admin.post.show', ['post' => $post->id]) }}" class="co-blue"
                                title="Предварительный просмотр">
                                 <i class="far fa-eye"></i>
                             </a>
@@ -56,12 +59,12 @@
                     <td>
                         
                             @if ($post->isVisible())
-                                <a href="{{ route('admin.post.disable', ['post' => $post->id]) }}"
+                                <a href="{{ route('admin.post.disable', ['post' => $post->id]) }}" class="co-blue"
                                    title="Запретить публикацию">
                                     <i class="fas fa-toggle-on"></i>
                                 </a>
                             @else
-                                <a href="{{ route('admin.post.enable', ['post' => $post->id]) }}"
+                                <a href="{{ route('admin.post.enable', ['post' => $post->id]) }}" class="co-blue"
                                    title="Разрешить публикацию">
                                     <i class="fas fa-toggle-off"></i>
                                 </a>
@@ -70,7 +73,7 @@
                     </td>
                     <td>
                         
-                            <a href="{{ route('admin.post.edit', ['post' => $post->id]) }}">
+                            <a href="{{ route('admin.post.edit', ['post' => $post->id]) }}" class="co-blue"> 
                                 <i class="far fa-edit"></i>
                             </a>
                         
@@ -81,7 +84,7 @@
                                   method="post" onsubmit="return confirm('Удалить этот пост?')">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="m-0 p-0 border-0 bg-transparent">
+                                <button type="submit" class="sub-delete">
                                     <i class="far fa-trash-alt text-danger"></i>
                                 </button>
                             </form>
@@ -90,6 +93,12 @@
                 </tr>
             @endforeach
         </table>
+    </div>
+    <div class="sub-block">
+        <button class="btn single-btn" type="button"><a href="{{ route('admin.post.create') }}" 
+            class="btn co-white">
+            Создать пост</a></button>
+    </div>
         {{ $posts->links() }}
     @endif
 @endsection

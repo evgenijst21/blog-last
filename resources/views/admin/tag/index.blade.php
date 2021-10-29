@@ -1,48 +1,51 @@
 @extends('admin.layouts_admin.layout', ['title' => 'Все теги блога'])
 
 @section('content')
-    <h1>Все теги блога</h1>
-    
-        <a href="{{ route('admin.tag.create') }}" class="btn btn-success mb-4">
-            Создать тег
-        </a>
+<div class="heading-h">
+    <h1 class="heading">Все теги блога</h1>
+</div>
     
     @if ($items->count())
-        <table class="table table-bordered">
+    <div class="main-table">
+        <table class="table">
+            <thead>
             <tr>
                 <th>#</th>
-                <th width="45%">Наименование</th>
-                <th width="45%">ЧПУ (англ.)</th>
-                <th><i class="fas fa-edit"></i></th>
-                <th><i class="fas fa-trash-alt"></i></th>
+                <th>Наименование</th>
+                <th>ЧПУ (англ.)</th>
+                <th>Изменить</th>
+                <th>Удалить</th>
             </tr>
+            </thead>
             @foreach ($items as $item)
             <tr>
                 <td>{{ $item->id }}</td>
                 <td>{{ $item->name }}</td>
                 <td>{{ $item->slug }}</td>
                 <td>
-                    
-                        <a href="{{ route('admin.tag.edit', ['tag' => $item->id]) }}">
+                        <a href="{{ route('admin.tag.edit', ['tag' => $item->id]) }}" class="co-blue">
                             <i class="far fa-edit"></i>
                         </a>
-                    
                 </td>
                 <td>
-                    
                         <form action="{{ route('admin.tag.destroy', ['tag' => $item->id]) }}"
                               method="post" onsubmit="return confirm('Удалить этот тег?')">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="m-0 p-0 border-0 bg-transparent">
-                                <i class="far fa-trash-alt text-danger"></i>
+                            <button type="submit" class="sub-delete">
+                                <i class="far fa-trash-alt"></i>
                             </button>
                         </form>
-                    
                 </td>
             </tr>
             @endforeach
         </table>
+    </div>
+    <div class="sub-block">
+        <button class="btn single-btn" type="button"><a href="{{ route('admin.tag.create') }}" 
+            class="btn co-white">
+            Создать тег</a></button>
+    </div>
         {{ $items->links() }}
     @endif
 @endsection

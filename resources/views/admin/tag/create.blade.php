@@ -1,28 +1,22 @@
 @extends('admin.layouts_admin.layout', ['title' => 'Создание тега'])
 
 @section('content')
-    <h1>Создание тега</h1>
-    @if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-    @endif
+<div class="heading-h">
+    <h1 class="heading">Создание тега</h1>
+</div>
+<div class="create-cat">
     <form method="post" action="{{ route('admin.tag.store') }}">
         @csrf
-        <div class="form-group mb-3">
-            <input id="name_post" type="text" class="form-control" name="name" placeholder="Наименование"
-                   required maxlength="50" value="{{ old('name') ?? '' }}">
+
+        <div class="text-field text-field_floating-3">
+            <input class="text-field__input" type="text" id="name" name="name"
+                value="">
+            <label class="text-field__label" for="name">Наименование</label>
         </div>
-        <div class="form-group mb-3">
-            <input id="slug" type="text" class="form-control" name="slug" placeholder="ЧПУ (на англ.)"
-                   required maxlength="50" value="{{ old('slug') ?? '' }}">
-        </div>
-        <div class="form-group mb-3">
-            <button type="submit" class="btn btn-primary">Сохранить</button>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-create co-white">Сохранить</button>
         </div>
     </form>
+</div>
 @endsection

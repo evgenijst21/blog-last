@@ -1,18 +1,14 @@
 @extends('admin.layouts_admin.layout', ['title' => 'Новый пост'])
 
 @section('content')
-    <h1>Новый пост</h1>
-    @if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-    @endif
+<div class="heading-h">
+    <h1 class="heading">Новый пост</h1>
+</div>
+<div class="create-cat">
     <form method="post" enctype="multipart/form-data"
           action="{{ route('admin.post.store') }}">
+        @csrf
         @include('admin.post.part.form')
     </form>
+</div>
 @endsection

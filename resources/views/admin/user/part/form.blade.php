@@ -1,42 +1,42 @@
-<div class="form-group mb-3">
-    <label for="exampleInputEmail1" class="form-label">Имя</label>
-    <input id="name_post" type="text" class="form-control" name="name" placeholder="..."
-            value="{{ old('name') ?? $user->name ?? '' }}">
+<div class="text-field text-field_floating-3">
+    <input class="text-field__input" type="text" id="name" name="name"
+        value="{{ old('name') ?? $user->name ?? '' }}">
+    <label class="text-field__label" for="name">Имя:</label>
 </div>
 
-<div class="form-group mb-3">
-    <label for="exampleInputEmail1" class="form-label">Фамилия)</label>
-    <input id="sur_name" type="text" class="form-control" name="sur_name" placeholder="..."
-            value="{{ old('seo_title') ?? $user->sur_name ?? '' }}">
+
+<div class="text-field text-field_floating-3">
+    <input class="text-field__input" type="text" id="sur_name" name="sur_name"
+        value="{{ old('sur_name') ?? $user->sur_name ?? '' }}">
+    <label class="text-field__label" for="sur_name">Фамилия:</label>
 </div>
 
-<div class="form-group mb-3">
-    <label for="exampleInputEmail1" class="form-label">Логин</label>
-    <input id="login" type="text" class="form-control" name="login" placeholder="..."
-            value="{{ old('login') ?? $user->login ?? '' }}">
+<div class="text-field text-field_floating-3">
+    <input class="text-field__input" type="text" id="login" name="login"
+        value="{{ old('login') ?? $user->login ?? '' }}">
+    <label class="text-field__label" for="login">Логин:</label>
 </div>
 
-<div class="form-group mb-3">
-    <label for="exampleInputEmail1" class="form-label">Пароль</label>
-    <input id="password" type="text" class="form-control" name="password" placeholder="..."
-            value="">
+<div class="text-field text-field_floating-3">
+    <input class="text-field__input" type="text" id="password" name="password"
+        value="">
+    <label class="text-field__label" for="password">Пароль:</label>
 </div>
 
-<div class="form-group mb-3">
-    <label for="exampleInputEmail1" class="form-label">Повторите пароль</label>
-    <input id="password_confirmation" type="text" class="form-control" name="password_confirmation" placeholder="..."
-            value="">
+<div class="text-field text-field_floating-3">
+    <input class="text-field__input" type="text" id="password_confirmation" name="password_confirmation"
+        value="">
+    <label class="text-field__label" for="password_confirmation">Повторите пароль:</label>
 </div>
 
-<div class="form-group mb-3">
-    <label for="exampleInputEmail1" class="form-label">Роль</label>
-    
-    <select name="role_id" class="form-control" title="Родитель">
+<div class="text-field text-field_floating-3">
+    <select name="role_id" class="text-field__input" title="Родитель">
         @foreach ($roles as $role)
         <option selected value="{{ $role->id }}">{{ $role->name }}</option>
         @endforeach
     </select>
+    <label class="text-field__label" for="role_id">Роль</label>
 </div>
-<div class="form-group mb-3">
-    <button type="submit" class="btn btn-primary">Сохранить</button>
+<div class="form-group">
+    <button type="submit" class="btn btn-create co-white">Сохранить</button>
 </div>
