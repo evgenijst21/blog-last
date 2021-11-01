@@ -9,8 +9,12 @@
                    required maxlength="255" value="{{ old('name') ?? '' }}">
         </div>
         <div class="form-group">
-            <input type="email" class="form-control" name="email" placeholder="Адрес почты"
-                   required maxlength="255" value="{{ old('email') ?? '' }}">
+            <input type="text" class="form-control" name="sur_name" placeholder="Фамилия"
+                   required maxlength="255" value="{{ old('sur_name') ?? '' }}">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" name="login" placeholder="Логин"
+                   required maxlength="255" value="{{ old('login') ?? '' }}">
         </div>
         <div class="form-group">
             <input type="text" class="form-control" name="password" placeholder="Придумайте пароль"

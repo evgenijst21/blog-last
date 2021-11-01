@@ -60,7 +60,7 @@
 
 </div>
 @isset($post->image)
-    <div class="form-group form-check mb-3">
+    <div class="mb-20">
         <input type="checkbox" class="form-check-input" name="remove" id="remove">
         <label class="form-check-label" for="remove">
             Удалить загруженное изображение

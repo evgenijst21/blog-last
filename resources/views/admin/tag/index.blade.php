@@ -41,11 +41,13 @@
             @endforeach
         </table>
     </div>
+    {{ $items->links() }}
+    @endif
     <div class="sub-block">
         <button class="btn single-btn" type="button"><a href="{{ route('admin.tag.create') }}" 
             class="btn co-white">
             Создать тег</a></button>
     </div>
-        {{ $items->links() }}
-    @endif
+        
+    
 @endsection

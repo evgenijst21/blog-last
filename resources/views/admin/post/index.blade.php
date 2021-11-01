@@ -5,22 +5,29 @@
     <h1 class="heading">Все посты блога</h1>
 </div>
 
-<form class="d-md-inline-block form-inline mb-md-4" method="GET" action="{{ route('admin.search') }}" >
-    <div class="input-group">
-        <input id="search" name="search" class="form-control" type="text" placeholder="Поиск по категориям" aria-label="Поиск по категориям"/>
-        <button class="btn btn-primary" id="btnNavbarSearch" type="submit"><i class="fas fa-search"></i></button>
-    </div>
-</form>
+<div class="search">
+    <form class="search-form" method="GET" action="{{ route('admin.search') }}" >
+        <div class="input-group">
+            <input id="search" name="search" class="serach-input" type="text" placeholder="Поиск по категориям" aria-label="Поиск по категориям"/>
+            <button class="search-button" id="btnNavbarSearch" type="submit"><i class="fas fa-search"></i></button>
+        </div>
+    </form>
+</div>
+
     @if ($category->count())
-        <ul>
-        @foreach ($category as $root)
-            <li>
-                <a href="{{ route('admin.post.category', ['category' => $root->id]) }}">
-                    {{ $root->name }}
-                </a>
-            </li>
-        @endforeach
-        </ul>
+    <div class="bar">
+        <ul class="post_categories">
+            @foreach ($category as $root)
+                <li>
+                    <button class="btn">
+                        <a href="{{ route('admin.post.category', ['category' => $root->id]) }}">
+                            {{ $root->name }}
+                        </a>
+                    </button>
+                </li>
+            @endforeach
+            </ul>
+    </div>
     @endif
     
     @if ($posts->count())
@@ -94,11 +101,13 @@
             @endforeach
         </table>
     </div>
+    {{ $posts->links() }}
+    @endif
     <div class="sub-block">
         <button class="btn single-btn" type="button"><a href="{{ route('admin.post.create') }}" 
             class="btn co-white">
             Создать пост</a></button>
     </div>
-        {{ $posts->links() }}
-    @endif
+       
+    
 @endsection

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Tag;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Cocur\Slugify\Slugify;
 
 class TagController extends Controller
 {
@@ -39,8 +40,12 @@ class TagController extends Controller
      */
     public function store(Request $request)
     {
+        $slugifi = new Slugify();
         $this->validator($request->all(), null)->validate();
-        $tag = Tag::create($request->all());
+        $tag = new Tag();
+        $tag->name = $request->name;
+        $tag->slug = $slugifi->slugify($request->name);
+        $tag->save();
         return redirect()
             ->route('admin.tag.index')
             ->with('success', 'Новый тег блога успешно создан');
@@ -99,24 +104,12 @@ class TagController extends Controller
     }
 
     private function validator($data, $id) {
-        $unique = 'unique:tags,sldata.imageug';
-        if ($id) {
-            // проверка на уникальность slug тега при редактировании,
-            // исключая этот тег по идентифкатору в таблице БД tags
-            $unique = 'unique:tags,slug,'.$id.',id';
-        }
         $rules = [
             'name' => [
                 'required',
                 'string',
                 'max:50',
             ],
-            'slug' => [
-                'required',
-                'max:50',
-                $unique,
-                'regex:~^[-_a-z0-9]+$~i',
-            ]
         ];
         $messages = [
             'required' => 'Поле «:attribute» обязательно для заполнения',

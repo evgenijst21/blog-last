@@ -4,7 +4,7 @@
         if (isset($post)) $tags = $post->tags->keyBy('id')->keys()->toArray();
         if (old('tags')) $tags = old('tags');
     @endphp
-    <label for="exampleInputEmail1" class="form-label">Теги</label>
+    <label for="exampleInputEmail1" class="co-blue"><h3>Теги</h3></label>
     <div class="form-group d-flex flex-wrap mb-3">
         
     @foreach ($items as $item)

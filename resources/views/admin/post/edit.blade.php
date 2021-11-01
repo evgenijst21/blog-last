@@ -11,10 +11,12 @@
         </ul>
     </div>
     @endif
+    <div class="create-cat">
     <form method="post" enctype="multipart/form-data"
           action="{{ route('admin.post.update', ['post' => $post->id]) }}">
         @method('PUT')
         @include('admin.post.part.form')
         
     </form>
+    </div>
 @endsection
