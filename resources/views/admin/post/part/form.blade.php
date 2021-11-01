@@ -22,6 +22,16 @@
     <label class="text-field__label" for="seo_keyword">Keywords (SEO)</label>
 </div>
 
+<div class="text-field text-field_floating-3">
+    <input class="text-field__input" type="date" id="published_date" name="published_date" value="">
+    <label class="text-field__label" for="published_date">Дата публикации:</label>
+</div>
+
+<div class="text-field text-field_floating-3">
+    <input class="text-field__input" type="time" id="published_time" name="published_time" value="">
+    <label class="text-field__label" for="published_time">Время публикации:</label>
+</div>
+
 <div class="ftext-field text-field_floating-3">
     @php
         $category_id = old('category_id') ?? $post->category_id ?? 0;

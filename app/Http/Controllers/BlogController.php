@@ -14,7 +14,7 @@ class BlogController extends Controller
     // Главная страница блога (список всех постов)
      
     public function index() {
-        $posts = Post::orderBy('created_at', 'desc')->paginate(5);
+        $posts = Post::where('published_at', '<', now())->orderBy('created_at', 'desc')->paginate(5);
         return view('blog.index', compact('posts'));
     }
 

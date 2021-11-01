@@ -157,7 +157,7 @@ a {
 
 .fa-search {
     font-size: 18px;
-} 
+}
 
 .post_categories {
     display: flex;
@@ -502,6 +502,7 @@ tr:nth-child(odd) {
 .fs-14 {
     font-size: 14px;
 }
+
 /* blok for form-create */
 
 .create-cat {
@@ -582,7 +583,6 @@ tr:nth-child(odd) {
 }
 
 .feedback-info {
-
     width: 100%;
     padding: 10px;
     font-size: 16px;
@@ -597,4 +597,24 @@ tr:nth-child(odd) {
 .feed-single {
     display: grid;
     justify-content: center;
+}
+
+.info_feed {
+    color: #4F4F4F;
+    font-size: 18px;
+    border: 1px solid #d3d2d2;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    background-color: #B5DAFF;
+}
+
+.info_danger {
+    color: #4F4F4F;
+    font-size: 18px;
+    border: 1px solid #d3d2d2;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    background-color: #f38787;
 }

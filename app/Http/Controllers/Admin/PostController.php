@@ -76,6 +76,7 @@ class PostController extends Controller
         $post->content = $request->content;
         $post->seo_title = $request->seo_title;
         $post->seo_keyword = $request->seo_keyword;
+        $post->published_at = $request->published_date . ' ' . $request->published_time;
         $post->save();
         $route = 'admin.post.index';
         return redirect()

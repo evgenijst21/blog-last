@@ -61,12 +61,12 @@
 
                     <div class="container">
                         @if ($message = session('success'))
-                            <div class="alert alert-success alert-dismissible mt-0" role="alert">
+                            <div class="info_feed" role="alert">
                                 {{ $message }}
                             </div>
                         @endif
                         @if ($errors->any())
-                            <div class="alert alert-danger">
+                            <div class="info_danger">
                                 <ul>
                                     @foreach ($errors->all() as $error)
                                         <li>{{ $error }}</li>
