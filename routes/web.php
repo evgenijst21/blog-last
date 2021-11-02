@@ -48,7 +48,7 @@ Route::group([
         ->name('post');
 });
 
-Route::post('feedback', [FeedbackController::class, 'store'])
+Route::post('feedback', 'Admin\FeedbackController@store')
         ->name('feedback.store');
 
 Route::group([
@@ -73,14 +73,16 @@ Route::group([
     // CRUD операции для тегов
     Route::resource('tag', 'TagController', ['except' => 'show']);
     // маршрут для формы обратной связи
-    Route::get('feedback/index', [FeedbackController::class, 'index'])
+    Route::get('feedback/index', 'FeedbackController@index')
         ->name('feedback.index');
-    Route::get('feedback/filter', [FeedbackController::class, 'filter'])
+    Route::get('feedback/filter', 'FeedbackController@filter')
         ->name('feedback.filter');
-    Route::get('feedback/{id}', [FeedbackController::class, 'show'])
+    Route::get('feedback/{id}', 'FeedbackController@show')
         ->name('feedback.single');
-    Route::delete('feedback/{feedback}', [FeedbackController::class, 'destroy'])
+    Route::delete('feedback/{feedback}', 'FeedbackController:@destroy')
         ->name('feedback.destroy');
+    // панель приборов dashboard
+    Route::get('dascboard', 'DashboardController@index')->name('dashboard.index');
     // поиск категорий
     Route::get('search', 'PostController@search')
         ->name('search');

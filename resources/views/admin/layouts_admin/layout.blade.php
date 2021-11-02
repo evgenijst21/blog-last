@@ -35,6 +35,8 @@
                             <li class="menu-li"><a href="{{ route('admin.feedback.index') }}"
                                     class="items-link">Заявки</a></li>
                             @can('view-protected')
+                                <li class="menu-li"><a href="{{ route('admin.dashboard.index') }}"
+                                    class="items-link">Панель приборов</a></li>
                                 <li class="menu-li"><a href="{{ route('admin.category.index') }}"
                                         class="items-link">Категории</a></li>
                                 <li class="menu-li"><a href="{{ route('admin.tag.index') }}"
