@@ -19,13 +19,11 @@ class Post extends Model
         'seo_desc',
         'seo_title',
         'seo_keyword',
+        'published_at',
         'content',
         'image',
     ];
 
-    /**
-     * Количество постов на странице при пагинации
-     */
     protected $perPage = 5;
 
     public function tags() {
