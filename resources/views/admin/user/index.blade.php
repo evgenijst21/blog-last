@@ -5,7 +5,11 @@
     <div class="heading-h">
         <h1 class="heading">Пользователи</h1>
     </div>
-
+    <div class="sub-block">
+        <button class="single-btn" type="button"><a href="{{ route('admin.user.create') }}" 
+            class="co-blue"><i class="fa fa-plus" aria-hidden="true"></i>
+            Новый пользователь</a></button>
+    </div>
     <div class="main-table">
         <table class="table">
             <thead>
@@ -39,11 +43,6 @@
                     </tr>
                 @endforeach
         </table>
-    </div>
-    <div class="sub-block">
-        <button class="btn single-btn" type="button"><a href="{{ route('admin.user.create') }}" 
-            class="btn co-white">
-            Создать пользователя</a></button>
     </div>
     {{ $users->links() }}
 @endsection

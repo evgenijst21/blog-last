@@ -4,7 +4,11 @@
 <div class="heading-h">
     <h1 class="heading">Все теги блога</h1>
 </div>
-    
+<div class="sub-block">
+    <button class="single-btn" type="button"><a href="{{ route('admin.tag.create') }}" 
+        class="co-blue"><i class="fa fa-plus" aria-hidden="true"></i>
+        Новый тег</a></button>
+</div>
     @if ($items->count())
     <div class="main-table">
         <table class="table">
@@ -43,11 +47,6 @@
     </div>
     {{ $items->links() }}
     @endif
-    <div class="sub-block">
-        <button class="btn single-btn" type="button"><a href="{{ route('admin.tag.create') }}" 
-            class="btn co-white">
-            Создать тег</a></button>
-    </div>
         
     
 @endsection

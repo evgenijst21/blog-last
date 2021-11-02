@@ -8,7 +8,7 @@
 <div class="search">
     <form class="search-form" method="GET" action="{{ route('admin.search') }}" >
         <div class="input-group">
-            <input id="search" name="search" class="serach-input" type="text" placeholder="Поиск по категориям" aria-label="Поиск по категориям"/>
+            <input id="search" name="search" class="search-input" type="text" placeholder="Поиск по категориям" aria-label="Поиск по категориям"/>
             <button class="search-button" id="btnNavbarSearch" type="submit"><i class="fas fa-search"></i></button>
         </div>
     </form>
@@ -29,7 +29,11 @@
             </ul>
     </div>
     @endif
-    
+    <div class="sub-block">
+        <button class="single-btn" type="button"><a href="{{ route('admin.post.create') }}" 
+            class="co-blue"><i class="fa fa-plus" aria-hidden="true"></i>
+            Новый пост</a></button>
+    </div>
     @if ($posts->count())
     <div class="main-table">
         <table class="table">
@@ -103,11 +107,6 @@
     </div>
     {{ $posts->links() }}
     @endif
-    <div class="sub-block">
-        <button class="btn single-btn" type="button"><a href="{{ route('admin.post.create') }}" 
-            class="btn co-white">
-            Создать пост</a></button>
-    </div>
        
     
 @endsection
