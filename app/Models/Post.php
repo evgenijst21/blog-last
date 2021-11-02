@@ -19,6 +19,7 @@ class Post extends Model
         'seo_desc',
         'seo_title',
         'seo_keyword',
+        'view_count',
         'published_at',
         'content',
         'image',

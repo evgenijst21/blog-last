@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\PostHasViewed;
 use App\Models\Category;
 use App\Models\Post;
 use App\Models\Tag;
@@ -22,6 +23,7 @@ class BlogController extends Controller
     // Страница просмотра отдельного поста блога
      
     public function post(Post $post) {
+        event(new PostHasViewed($post));
         return view('blog.post', compact('post'));
     }
 

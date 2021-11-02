@@ -26,6 +26,7 @@ class CreatePostsTable extends Migration
             $table->string('seo_desc')->nullable();
             $table->string('seo_title')->nullable();
             $table->string('seo_keyword')->nullable();
+            $table->int('view_count')->default(0);
             $table->timestamp('published_at')->default(now());
             $table->timestamps();
         });

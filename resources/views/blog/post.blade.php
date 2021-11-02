@@ -14,6 +14,7 @@
                 <br>
                 Дата: {{ $post->created_at }}
         </div>
+        <p>Просмотров: {{$post->view_count}}</p>
         @if ($post->tags->count())
             <div class="card-footer">
                 Теги:
