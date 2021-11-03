@@ -21,6 +21,9 @@ class EventServiceProvider extends ServiceProvider
         'App\Events\PostHasViewed' => [
             'App\Listeners\Counter',
           ],
+        'App\Events\VisitsForMain' => [
+            'App\Listeners\HowManyVisits',
+          ],
     ];
 
     /**
